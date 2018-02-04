@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<link rel="stylesheet" type="text/css" href="question.css">
+
+<body>
+<div id="container">
+<input type="text"  placeholder="Creat your question" id="questionId"><br><br><hr>  
+Answer 1:<input type="radio"  value="a" id="aAnswer" > <input type="text" name="fname" id="optionA">  <br><br>
+Answer 2:<input type="radio"  value="b" id="bAnswer"> <input type="text" name="fname" id="optionB"> <br><br>
+Answer 3:<input type="radio"  value="c" id="cAnswer"> <input type="text" name="fname" id="optionC">  <br><br>
+Answer 4:<input type="radio"  value="d" id="dAnswer"> <input type="text" name="fname" id="optionD"> <br><br>
+<button id="submit">Submit</button>
+</div>
+
+</body>
+    
+<script>
+
+var submit = document.getElementById("submit");   
+    var aAnswer = document.getElementById("aAnswer");   
+    var bAnswer = document.getElementById("bAnswer");   
+    var cAnswer = document.getElementById("cAnswer");   
+    var dubmit = document.getElementById("dAnswer");     
+  
+
+
+submit.addEventListener("click", function(){
+     
+    if(aAnswer.checked){
+        
+        var request;
+        
+        if(window.XMLHttpRequest){
+            request = new XMLHttpRequest();
+        }
+        
+        else if(window.ActiveXObject){
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+  
+        var profile = new FormData();
+        
+        profile.append("question", questionId.value);
+       
+        profile.append("correctanswer", optionA.value);
+        profile.append("answer1", optionB.value);
+        profile.append("answer2", optionC.value);
+        profile.append("answer3", optionD.value);
+        
+        request.open("POST", "save.php", true);   
+        request.send(profile);
+        
+        
+        
+    } else if (bAnswer.checked){
+        
+         var request;
+        
+        if(window.XMLHttpRequest){
+            request = new XMLHttpRequest();
+        }
+        
+        else if(window.ActiveXObject){
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+  
+        var profile = new FormData();
+        
+        profile.append("question", questionId.value);
+       
+        profile.append("correctanswer", optionB.value);
+        profile.append("answer1", optionA.value);
+        profile.append("answer2", optionC.value);
+        profile.append("answer3", optionD.value); 
+     
+      
+        request.open("POST", "save.php", true);   
+        request.send(profile);
+        
+    
+    } else if (cAnswer.checked){
+        
+         var request;
+        
+        if(window.XMLHttpRequest){
+            request = new XMLHttpRequest();
+        }
+        
+        else if(window.ActiveXObject){
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+  
+        var profile = new FormData();
+        
+        profile.append("question", questionId.value);
+      
+        profile.append("correctanswer", optionC.value);
+        profile.append("answer1", optionA.value);
+        profile.append("answer2", optionB.value);
+        profile.append("answer3", optionD.value);
+        
+      
+      
+        request.open("POST", "save.php", true);   
+        request.send(profile);
+    
+    } else if (dAnswer.checked){
+        
+        var request;
+        
+        if(window.XMLHttpRequest){
+            request = new XMLHttpRequest();
+        }
+        
+        else if(window.ActiveXObject){
+            request = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+  
+        var profile = new FormData();
+        
+        profile.append("question", questionId.value);
+      
+        profile.append("correctanswer", optionD.value);
+        profile.append("answer1", optionA.value);
+        profile.append("answer2", optionC.value);
+        profile.append("answer3", optionB.value);
+        
+      
+      
+        request.open("POST", "save.php", true); 
+        request.send(profile);
+    
+    }
+ 
+
+     
+    
+     
+     
+
+  
+
+
+})    
+    
+
+   
+//  function doSave(){      
+//      var request;
+//        
+//        if(window.XMLHttpRequest){
+//            request = new XMLHttpRequest();
+//        }
+//        
+//        else if(window.ActiveXObject){
+//            request = new ActiveXObject("Microsoft.XMLHTTP");
+//        }
+//  
+//        var profile = new FormData();
+//        
+//        profile.append("myQuestion", questionId.value);
+//        profile.append("myAnswer", optionId.value);
+//      
+//        request.open("POST", "saveData.php", true);   
+//        request.send(profile);
+//  } 
+    
+
+
+</script>    
+    
+    
+</html>
